@@ -17,7 +17,7 @@ git credentialsId: '7756c0ab-ba80-44bc-91a3-6a5b91e996cb', url: 'https://github.
         stage("Execute Java") {
             steps {
                 // Execute the compiled Java class
-              bat 'java -cp C:/Users/sayallap/eclipse-workspace/My_Project1/src/com/mypackage My_Class'
+              bat 'java -cp C:/Users/sayallap/eclipse-workspace/My_Project1/src com.mypackage.My_Class'
             }
         }
         
