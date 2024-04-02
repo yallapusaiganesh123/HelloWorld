@@ -7,6 +7,19 @@ pipeline{
 git credentialsId: '7756c0ab-ba80-44bc-91a3-6a5b91e996cb', url: 'https://github.com/yallapusaiganesh123/HelloWorld.git'
             }
         }
+
+ stage("Compile Java") {
+            steps {
+                // Compile the Java class
+                bat "javac path/to/My_Class.java"
+            }
+        }
+        stage("Execute Java") {
+            steps {
+                // Execute the compiled Java class
+                bat "java -cp path/to com.mypackage.My_Class"
+            }
+        }
         
         
     }
