@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+    stages{
+        stage("Clean Up"){
+            steps{
+                dir("Project"){
+                deleteDir();
+                }
+            }
+        }
+        stage("Clone Repo"){
+            steps{
+                    bat "git clone https://github.com/yallapusaiganesh123/HelloWorld.git"
+            }
+        }
+        stage("Build"){
+            steps{
+                dir("HelloWorld"){
+                    bat "mvn clean install"
+                }
+            }
+        }
+        stage("Test"){
+            steps{
+                dir("HelloWorld"){
+                    bat "mvn test"
+                }
+            }
+        }
+    }
+}
